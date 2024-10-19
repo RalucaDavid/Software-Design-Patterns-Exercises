@@ -1,0 +1,5 @@
+
+tsc exercise6_1.ts
+node exercise6_1.js
+
+npx ts-node exercise6_1.ts
