@@ -1,21 +1,23 @@
 class Square{
+    #_side;
+
     constructor(x, y, side){
         this.x = x;
         this.y = y;
-        this._side = side;
+        this.#_side = side;
     }
 
     calculateArea(){
-        return this._side * this._side;
+        return this.#_side * this.#_side;
     }
 
     get side(){
-        return this._side;
+        return this.#_side;
     }
 
     set side(newSide){
        if(newSide > 0){
-        this._side = newSide;
+        this.#_side = newSide;
        }
        else{
         console.error("Incorrect new value for side.");
