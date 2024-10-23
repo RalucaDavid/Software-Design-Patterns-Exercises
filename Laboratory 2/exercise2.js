@@ -1,11 +1,12 @@
+function traversePreOrder(node) {
+    if (node) {
+        console.log(node.nodeName); 
 
-class Graph{
-    /*Nodelist<Node*/
+        node.childNodes.forEach(child => {
+            traversePreOrder(child); 
+        });
+    }
 }
 
-class Node{
-    /*string Name;
-    List Children<Node*/
-}
-
-/* TO DO */
+const body = document.body; 
+traversePreOrder(body); 

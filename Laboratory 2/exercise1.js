@@ -20,7 +20,7 @@ function bfs(matrix, source) {
     }
 }
 
-function addEdge(node1, node2) {
+function addEdge(matrix, node1, node2) {
     matrix[node1].push(node2);
     matrix[node2].push(node1);
 };
@@ -29,11 +29,11 @@ function addEdge(node1, node2) {
 const size = 5;
 const matrix = Array.from({ length: size }, () => []);
 
-addEdge(0, 1);
-addEdge(1, 2);
-addEdge(0, 2);
-addEdge(2, 4);
-addEdge(1, 3);
-addEdge(3, 4);
+addEdge(matrix, 0, 1);
+addEdge(matrix, 1, 2);
+addEdge(matrix, 0, 2);
+addEdge(matrix, 2, 4);
+addEdge(matrix, 1, 3);
+addEdge(matrix, 3, 4);
 
 bfs(matrix, 0);
