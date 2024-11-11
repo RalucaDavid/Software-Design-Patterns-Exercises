@@ -27,5 +27,7 @@ function traversePreOrder(node) {
     });
 }
 
-const body = document.body;
-traversePreOrder(body); 
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    traversePreOrder(body);
+});
