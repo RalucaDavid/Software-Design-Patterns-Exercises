@@ -30,19 +30,19 @@ server.on('connection', (socket: WebSocket) => {
     clients.add(client);
     broadcast({ event: 'join', name: client.name }, client);
 
-    socket.on('message', (message: string) => {
+    socket.addEventListener('message', (event: WebSocket.MessageEvent) => {
         try {
-            const { event, content }: Message = JSON.parse(message);
-            if (event === 'message') {
+            const { event: messageEvent, content }: Message = JSON.parse(event.data.toString());
+            if (messageEvent === 'message') {
                 broadcast({ event: 'message', name: client.name, content });
             }
         } 
         catch (error) {
-            console.error('Invalid message format:', message);
+            console.error('Invalid message format:', event.data);
         }
     });
 
-    socket.on('close', () => {
+    socket.addEventListener('close', () => {
         clients.delete(client);
         broadcast({ event: 'leave', name: client.name }, client);
     });
