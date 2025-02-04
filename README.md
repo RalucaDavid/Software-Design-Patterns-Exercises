@@ -6,4 +6,6 @@ The exercises from the Software Design Patterns subject are the following:
 - **Laboratory 4:** convert a JavaScript Promise into an Observable using the RxJS library
 - **Laboratory 5:** a server-side system with a counter that tracks page visits
 - **Laboratory 6:**
-- **Laboratory 7:** a chat with WebSockets
+- **Laboratory 7:** a chat with WebSockets (Frontend in React)
+- **Laboratory 8:**
+- **Laboratory 9:**
